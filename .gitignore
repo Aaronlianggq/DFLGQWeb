@@ -1,0 +1,55 @@
+project.json.lock
+/xcuserdata
+*.xcuserdatad
+*/xcshareddata/
+DongFuWang/DongFuWang.xcodeproj/xcshareddata/
+*.xcuserstate
+project.xcworkspace
+*UserInterfaceState.xcuserstate
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.hmap
+*.ipa
+*.xcuserstate
+
+# Built android files
+*.apk
+
+# Gradle files
+.gradle/
+.build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log Files
+*.log
+.DS_Store
+!*.xcworkspace/contents.xcworkspacedata
+
+# Python Files
+*.pyc
+
+# Sript Files
+Build/
+
+# Cocoapods 
+Pods/
+Podfile.lock
+
+# node 
+*/node_modules
+*/package-lock.json
+
+archive/
+output/DistributionSummary.plist
+output/ExportOptions.plist
+output/fir-DFMaxStore.png
