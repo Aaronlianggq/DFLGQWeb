@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		01A6560C29ACB17600425726 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A6560A29ACB17600425726 /* Main.storyboard */; };
 		01A6560E29ACB17800425726 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01A6560D29ACB17800425726 /* Assets.xcassets */; };
 		01A6561129ACB17800425726 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A6560F29ACB17800425726 /* LaunchScreen.storyboard */; };
+		64DB2495E601668FBAE19502 /* Pods_DFLGQWebDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74347183C9ABE4D4FD30123 /* Pods_DFLGQWebDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,9 @@
 		01A6561029ACB17800425726 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01A6561229ACB17800425726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01A6561829ACB33200425726 /* DFLGQWebDemoDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DFLGQWebDemoDebug.entitlements; sourceTree = "<group>"; };
+		215F8936F50DC2ADF9E0C73A /* Pods-DFLGQWebDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFLGQWebDemo.debug.xcconfig"; path = "Target Support Files/Pods-DFLGQWebDemo/Pods-DFLGQWebDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		A83A4B5EC8BDC4C2A19A0BE4 /* Pods-DFLGQWebDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFLGQWebDemo.release.xcconfig"; path = "Target Support Files/Pods-DFLGQWebDemo/Pods-DFLGQWebDemo.release.xcconfig"; sourceTree = "<group>"; };
+		B74347183C9ABE4D4FD30123 /* Pods_DFLGQWebDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DFLGQWebDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64DB2495E601668FBAE19502 /* Pods_DFLGQWebDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +46,8 @@
 			children = (
 				01A6560329ACB17600425726 /* DFLGQWebDemo */,
 				01A6560229ACB17600425726 /* Products */,
+				C0307590337B84D3830F99A3 /* Pods */,
+				EAEA1CB4B32A3CEE3932B282 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +73,23 @@
 			path = DFLGQWebDemo;
 			sourceTree = "<group>";
 		};
+		C0307590337B84D3830F99A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				215F8936F50DC2ADF9E0C73A /* Pods-DFLGQWebDemo.debug.xcconfig */,
+				A83A4B5EC8BDC4C2A19A0BE4 /* Pods-DFLGQWebDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EAEA1CB4B32A3CEE3932B282 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B74347183C9ABE4D4FD30123 /* Pods_DFLGQWebDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -73,9 +97,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01A6561529ACB17800425726 /* Build configuration list for PBXNativeTarget "DFLGQWebDemo" */;
 			buildPhases = (
+				E3716ABE39E0811B6008F7F9 /* [CP] Check Pods Manifest.lock */,
 				01A655FD29ACB17600425726 /* Sources */,
 				01A655FE29ACB17600425726 /* Frameworks */,
 				01A655FF29ACB17600425726 /* Resources */,
+				89D1189489E646B09DDD14E3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -102,7 +128,7 @@
 				};
 			};
 			buildConfigurationList = 01A655FC29ACB17600425726 /* Build configuration list for PBXProject "DFLGQWebDemo" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -131,6 +157,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		89D1189489E646B09DDD14E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DFLGQWebDemo/Pods-DFLGQWebDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DFLGQWebDemo/Pods-DFLGQWebDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DFLGQWebDemo/Pods-DFLGQWebDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3716ABE39E0811B6008F7F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DFLGQWebDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		01A655FD29ACB17600425726 /* Sources */ = {
@@ -280,6 +348,7 @@
 		};
 		01A6561629ACB17800425726 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 215F8936F50DC2ADF9E0C73A /* Pods-DFLGQWebDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -303,6 +372,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dffl.app.one.DFLGQWebDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -315,6 +388,7 @@
 		};
 		01A6561729ACB17800425726 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A83A4B5EC8BDC4C2A19A0BE4 /* Pods-DFLGQWebDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -336,6 +410,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dffl.app.one.DFLGQWebDemo;

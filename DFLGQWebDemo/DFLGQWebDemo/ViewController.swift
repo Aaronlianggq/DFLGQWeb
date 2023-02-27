@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DFLGQWeb
 
 class ViewController: UIViewController {
 
@@ -20,7 +21,7 @@ class ViewController: UIViewController {
 
 
     @objc dynamic private func goDemoWebPage(){
-//        DFManager.shareSingleton().openWebPage(self,
+        //        DFManager.shareSingleton().openWebPage(self,
 //                                               url: "https://aaronlianggq.github.io/web_sdk_demo.html",
 //                                               params: ["webTitle": "东福WebSDK演示"])
     }
