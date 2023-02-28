@@ -8,7 +8,7 @@
 import UIKit
 
 
-class DFManager: NSObject {
+public class DFManager: NSObject {
     ///单列对象
     @objc private static let singleton = DFManager()
         
