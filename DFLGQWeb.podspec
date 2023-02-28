@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'DFLGQWeb'
-  s.version      = '1.0.1'
+  s.version      = '1.0.2'
   s.summary      = '东福WebSDk集成'
   s.homepage     = 'https://github.com/Aaronlianggq/DFLGQWeb'
   s.license      = 'MIT'
