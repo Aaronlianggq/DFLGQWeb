@@ -5,5 +5,7 @@ platform:ios,'11.0'
 target “DFLGQWebDemo” do
 use_frameworks! # 运用 Dynamic Framework
     pod 'DFLGQWeb'
+    pod 'ZXingObjC', '~> 3.6.4'
+
 end
 
