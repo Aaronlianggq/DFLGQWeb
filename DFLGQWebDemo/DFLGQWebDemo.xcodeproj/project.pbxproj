@@ -12,7 +12,7 @@
 		01A6560C29ACB17600425726 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A6560A29ACB17600425726 /* Main.storyboard */; };
 		01A6560E29ACB17800425726 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01A6560D29ACB17800425726 /* Assets.xcassets */; };
 		01A6561129ACB17800425726 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A6560F29ACB17800425726 /* LaunchScreen.storyboard */; };
-		64DB2495E601668FBAE19502 /* Pods_DFLGQWebDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74347183C9ABE4D4FD30123 /* Pods_DFLGQWebDemo.framework */; };
+		7091035B4E0E538A26C9FA19 /* libPods-DFLGQWebDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA84529002688872B297868 /* libPods-DFLGQWebDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +26,7 @@
 		01A6561829ACB33200425726 /* DFLGQWebDemoDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DFLGQWebDemoDebug.entitlements; sourceTree = "<group>"; };
 		215F8936F50DC2ADF9E0C73A /* Pods-DFLGQWebDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFLGQWebDemo.debug.xcconfig"; path = "Target Support Files/Pods-DFLGQWebDemo/Pods-DFLGQWebDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A83A4B5EC8BDC4C2A19A0BE4 /* Pods-DFLGQWebDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFLGQWebDemo.release.xcconfig"; path = "Target Support Files/Pods-DFLGQWebDemo/Pods-DFLGQWebDemo.release.xcconfig"; sourceTree = "<group>"; };
-		B74347183C9ABE4D4FD30123 /* Pods_DFLGQWebDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DFLGQWebDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCA84529002688872B297868 /* libPods-DFLGQWebDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DFLGQWebDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64DB2495E601668FBAE19502 /* Pods_DFLGQWebDemo.framework in Frameworks */,
+				7091035B4E0E538A26C9FA19 /* libPods-DFLGQWebDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +85,7 @@
 		EAEA1CB4B32A3CEE3932B282 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B74347183C9ABE4D4FD30123 /* Pods_DFLGQWebDemo.framework */,
+				BCA84529002688872B297868 /* libPods-DFLGQWebDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -101,7 +101,7 @@
 				01A655FD29ACB17600425726 /* Sources */,
 				01A655FE29ACB17600425726 /* Frameworks */,
 				01A655FF29ACB17600425726 /* Resources */,
-				89D1189489E646B09DDD14E3 /* [CP] Embed Pods Frameworks */,
+				3FEE8BA4760106A98B6D4F84 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,21 +159,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		89D1189489E646B09DDD14E3 /* [CP] Embed Pods Frameworks */ = {
+		3FEE8BA4760106A98B6D4F84 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DFLGQWebDemo/Pods-DFLGQWebDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DFLGQWebDemo/Pods-DFLGQWebDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DFLGQWebDemo/Pods-DFLGQWebDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DFLGQWebDemo/Pods-DFLGQWebDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DFLGQWebDemo/Pods-DFLGQWebDemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DFLGQWebDemo/Pods-DFLGQWebDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E3716ABE39E0811B6008F7F9 /* [CP] Check Pods Manifest.lock */ = {
