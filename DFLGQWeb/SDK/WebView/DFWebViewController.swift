@@ -16,6 +16,7 @@ class DFWebViewController: UIViewController, WKNavigationDelegate {
     ///webview
     @objc private lazy var webView: DFWebView = {
         let webView = DFWebView(frame: .zero)
+        webView.translatesAutoresizingMaskIntoConstraints = false
         webView.webProxy = self
         webView.containerVc = self
         webView.allowsBackForwardNavigationGestures = true
@@ -25,12 +26,24 @@ class DFWebViewController: UIViewController, WKNavigationDelegate {
     ///进度条
     @objc private lazy var progressView: UIProgressView = {
         let proView = UIProgressView()
+        proView.translatesAutoresizingMaskIntoConstraints = false
         proView.tintColor = UIColor.blue // 进度条背景色
         proView.trackTintColor = UIColor.white
         return proView
     }()
     /// 是否可以系统右滑动返回，
     @objc private var isRecordCanPopGestureRecognizer: Bool = true
+    ///不支持旋转
+    override var shouldAutorotate: Bool {
+        get {
+            return false
+        }
+    }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        get {
+            return .portrait
+        }
+    }
     
     
     //MARK: override
@@ -133,16 +146,18 @@ class DFWebViewController: UIViewController, WKNavigationDelegate {
         self.view.backgroundColor = UIColor.white
         self.view.addSubview(self.webView)
         self.webView.addSubview(self.progressView)
-        self.webView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
-            make.left.right.equalToSuperview()
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
-        }
-        self.progressView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            make.left.right.equalToSuperview()
-            make.height.equalTo(1.0)
-        }
+        //
+        let webTop  = NSLayoutConstraint.init(item: webView, attribute: .top, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 0.0)
+        let webLeft = NSLayoutConstraint.init(item: webView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0.0)
+        let webRight = NSLayoutConstraint.init(item: webView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0.0)
+        let webBottom = NSLayoutConstraint.init(item: webView, attribute: .bottom, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: 0.0)
+        self.view.addConstraints([webTop, webLeft, webRight, webBottom])
+        let progTop = NSLayoutConstraint.init(item: progressView, attribute: .top, relatedBy: .equal, toItem: webView, attribute: .top, multiplier: 1.0, constant: 0.0)
+        let progLeft = NSLayoutConstraint.init(item: progressView, attribute: .left, relatedBy: .equal, toItem: webView, attribute: .left, multiplier: 1.0, constant: 0.0)
+        let progRight = NSLayoutConstraint.init(item: progressView, attribute: .right, relatedBy: .equal, toItem: webView, attribute: .right, multiplier: 1.0, constant: 0.0)
+        let progHeight = NSLayoutConstraint.init(item: progressView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 1.0)
+        self.webView.addConstraints([progTop, progLeft, progRight])
+        self.progressView.addConstraint(progHeight)
     }
     
     deinit {

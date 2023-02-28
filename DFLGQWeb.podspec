@@ -7,8 +7,12 @@ Pod::Spec.new do |s|
   s.authors      = {'aaronlianggq' => '897135405@qq.com'}
   s.platform     = :ios, '11.0'
   s.source       = {:git => 'https://github.com/Aaronlianggq/DFLGQWeb.git', :tag => s.version}
-  s.source_files = 'DFLGQWeb/**/*.{h,m,swift}' 
-  s.public_header_files = 'DFLGQWeb/**/*.{h,swift}'
+  s.dependency "ZXingObjC", "~> 3.6.5"
+  s.source_files = 'DFLGQWeb/SDK/**/*.{h,m,swift}' 
+  s.resource_bundles = {
+    'DFResources' => ['DFLGQWeb/SDK/Resources/*.png']
+  }
+  #s.public_header_files = 'DFLGQWeb/**/*.{h,swift}'
   s.swift_versions = ['5.0']
   s.framework    = 'UIKit','Foundation','QuartzCore','ImageIO','CoreGraphics','AVFoundation'
   s.requires_arc = true

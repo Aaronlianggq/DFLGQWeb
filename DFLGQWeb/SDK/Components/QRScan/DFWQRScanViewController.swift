@@ -303,47 +303,60 @@ extension DFWQRScanViewController{
         self.scanView.addSubview(lineImgView)
         let AppStatusBarHeight = UIApplication.shared.statusBarFrame.size.height
         let AppNavBarHeight = (AppStatusBarHeight + 44.0)
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        lightButton.translatesAutoresizingMaskIntoConstraints = false
+        phontsButton.translatesAutoresizingMaskIntoConstraints = false
+        scanView.translatesAutoresizingMaskIntoConstraints = false
+        tipsLabel.translatesAutoresizingMaskIntoConstraints = false
+        scanImgView.translatesAutoresizingMaskIntoConstraints = false
+        lineImgView.translatesAutoresizingMaskIntoConstraints = false
+        //
+        let backBtnLeft = NSLayoutConstraint.init(item: backButton, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0.0)
+        let backBtnTop = NSLayoutConstraint.init(item: backButton, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: AppStatusBarHeight + 10)
+        let backWidth = NSLayoutConstraint.init(item: backButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 44.0)
+        let backHeight = NSLayoutConstraint.init(item: backButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 44.0)
+        self.view.addConstraints([backBtnLeft, backBtnTop])
+        backButton.addConstraints([backWidth, backHeight])
+        
+        let scanTop = NSLayoutConstraint.init(item: scanView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: (self.view.frame.size.height - AppNavBarHeight - 250) / 2)
+        let scanCenterX = NSLayoutConstraint.init(item: scanView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0.0)
+        let scanWidth = NSLayoutConstraint.init(item: scanView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 250.0)
+        let scanHeight = NSLayoutConstraint.init(item: scanView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 250.0)
+        self.view.addConstraints([scanTop, scanCenterX])
+        scanView.addConstraints([scanWidth, scanHeight])
 
-        backButton.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(0)
-            make.top.equalToSuperview().offset(AppStatusBarHeight+10)
-            make.width.equalTo(44)
-            make.height.equalTo(44)
-        }
-        scanView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo((self.view.frame.size.height-AppNavBarHeight-250)/2)
-            make.width.height.equalTo(250)
-        }
-        tipsLabel.snp.makeConstraints { make in
-            make.top.equalTo(scanView.snp.bottom).offset(20)
-            make.centerX.equalToSuperview()
-            make.height.equalTo(20)
-        }
-        scanImgView.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(18)
-            make.right.equalToSuperview().offset(-18)
-            make.top.equalToSuperview().offset(18)
-            make.bottom.equalToSuperview().offset(-18)
-        }
-        lineImgView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(0)
-            make.width.equalTo(210.0)
-            make.height.equalTo(2.0)
-        }
-        lightButton.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(44)
-            make.top.equalTo(scanView.snp.bottom).offset(148)
-            make.width.equalTo(44)
-            make.height.equalTo(44)
-        }
-        phontsButton.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-44)
-            make.centerY.equalTo(lightButton)
-            make.width.equalTo(44)
-            make.height.equalTo(44)
-        }
+        let tipsTop = NSLayoutConstraint.init(item: tipsLabel, attribute: .top, relatedBy: .equal, toItem: scanView, attribute: .bottom, multiplier: 1.0, constant: 20.0)
+        let tipsCenterX = NSLayoutConstraint.init(item: tipsLabel, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0.0)
+        let tipsHeight = NSLayoutConstraint.init(item: tipsLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 20.0)
+        self.view.addConstraints([tipsTop, tipsCenterX])
+        tipsLabel.addConstraints([tipsHeight])
+
+        let scanImgLeft = NSLayoutConstraint.init(item: scanImgView, attribute: .left, relatedBy: .equal, toItem: scanView, attribute: .left, multiplier: 1.0, constant: 18.0)
+        let scanImgTop = NSLayoutConstraint.init(item: scanImgView, attribute: .top, relatedBy: .equal, toItem: scanView, attribute: .top, multiplier: 1.0, constant: 18.0)
+        let scanImeCenterX = NSLayoutConstraint.init(item: scanImgView, attribute: .centerX, relatedBy: .equal, toItem: scanView, attribute: .centerX, multiplier: 1.0, constant: 0.0)
+        let scanImeCenterY = NSLayoutConstraint.init(item: scanImgView, attribute: .centerY, relatedBy: .equal, toItem: scanView, attribute: .centerY, multiplier: 1.0, constant: 0.0)
+        scanView.addConstraints([scanImgLeft, scanImgTop, scanImeCenterX, scanImeCenterY])
+
+        let lineTop = NSLayoutConstraint.init(item: lineImgView, attribute: .top, relatedBy: .equal, toItem: scanView, attribute: .top, multiplier: 1.0, constant: 0.0)
+        let lineCenterX = NSLayoutConstraint.init(item: lineImgView, attribute: .centerX, relatedBy: .equal, toItem: scanView, attribute: .centerX, multiplier: 1.0, constant: 0.0)
+        let lineWidth = NSLayoutConstraint.init(item: lineImgView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 210.0)
+        let lineHeight = NSLayoutConstraint.init(item: lineImgView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 2.0)
+        scanView.addConstraints([lineTop, lineCenterX])
+        lineImgView.addConstraints([lineWidth, lineHeight])
+
+        let lightLeft = NSLayoutConstraint.init(item: lightButton, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 44.0)
+        let lightTop = NSLayoutConstraint.init(item: lightButton, attribute: .top, relatedBy: .equal, toItem: scanView, attribute: .bottom, multiplier: 1.0, constant: 148.0)
+        let lightWidth = NSLayoutConstraint.init(item: lightButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 44.0)
+        let lightHeight = NSLayoutConstraint.init(item: lightButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 44.0)
+        self.view.addConstraints([lightLeft, lightTop])
+        lightButton.addConstraints([lightWidth, lightHeight])
+
+        let phontsRight = NSLayoutConstraint.init(item: phontsButton, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: -44.0)
+        let phontsCenterY = NSLayoutConstraint.init(item: phontsButton, attribute: .centerY, relatedBy: .equal, toItem: lightButton, attribute: .centerY, multiplier: 1.0, constant: 0.0)
+        let phontsWidth = NSLayoutConstraint.init(item: phontsButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 44.0)
+        let phontsHeight = NSLayoutConstraint.init(item: phontsButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 44.0)
+        self.view.addConstraints([phontsRight, phontsCenterY])
+        phontsButton.addConstraints([phontsWidth, phontsHeight])
     }
 }
 
